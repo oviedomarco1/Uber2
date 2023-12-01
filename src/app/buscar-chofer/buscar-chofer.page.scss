@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+ion-content{ 
+    --ion-background-color: linear-gradient( #64DFDF, #48BFE3, #5390D9, #5E60CE); 
+  }
+
+ion-card-title{
+    font-family: 'Poppins', sans-serif;
+    
+}
+.ion-icon-favorite-driver{
+  color: #f6ff00;
+  font-size: 16px;
+  margin-left: 40px;
+}
+.whatsapp-logo{
+  color: #41e25e;
+}
+.pedir-viaje-logo{
+  color: #fe9f00;
+}
+ion-card-content{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    padding: 5px 0 0 15px;
+}
+ion-card{
+  margin-bottom: 1vh;
+  border: solid 3px rgb(129, 139, 247);
+}
+ion-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+ion-button{
+    border-radius: 5px;
+    color: #48BFE3;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+}
+
+ion-button:hover{
+    background-color: #31446c
+}
+ion-tabs{//puede que haya que modificar esto. El ion tab se posiciona sobre los botones, haciendolos inutiles.
+  position: fixed;
+}
+ion-col{
+  padding-top: 50px;
+}
+// Animación de la disponibilidad
+.disponibilidad {
+    animation-name: growAndShrink;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse; /* Hace que la animación se repita en ambas direcciones (crecimiento y decrecimiento) */
+  }
+  
+    @keyframes growAndShrink {
+      0% {
+        font-weight: 800;
+        transform: scaleX(1) scaleY(1);
+        color: #00affd;
+      }
+      25% {
+        font-weight: 800;
+        transform: scaleX(1) scaleY(1.25);
+        color: #00affd;
+      }
+      50% {
+        font-weight: 800;
+        transform: scaleX(1) scaleY(1.25);
+        color: #00affd;
+      }
+      75% {
+        font-weight: 800;
+        transform: scaleX(1) scaleY(1.25);
+        color: #00affd;
+      }
+      100% {
+        font-weight: 800;
+        transform: scaleX(1) scaleY(1);
+        color: #00affd;
+      }
+  }
+// capacitor-google-map {
+//   display: inline-block;
+//   justify-content: center;
+//   margin-left: 7px;
+//   width: 250px;
+//   height: 300px;
+//   border: solid 1px red;
+// }

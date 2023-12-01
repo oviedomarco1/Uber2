@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+ion-content{ 
+  --ion-background-color: linear-gradient( #64DFDF, #48BFE3, #5390D9, #5E60CE); 
+}
+ion-tab-bar{
+  --ion-background-color: linear-gradient( #5a74d2, 15%, #eeeeee); 
+  // box-shadow: 0px 6px 20px 5px #5a74d2e8;
+  border: none;
+}

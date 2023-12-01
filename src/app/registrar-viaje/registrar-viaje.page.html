@@ -1,0 +1,112 @@
+<ion-content [fullscreen]="true">
+  <!-- Menú de navegación  -->
+  <ion-grid>
+    <ion-content>
+      <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="false">
+        <ion-fab-button>
+          <ion-icon name="chevron-down-circle"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="bottom">
+          <ion-fab-button>
+            <ion-icon name="map" [routerLink]="['/buscar-chofer']"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="car" [routerLink]="['/registrar-viaje']"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="person-circle" [routerLink]=""></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="log-out" [routerLink]="['/home']"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-content>
+  </ion-grid>
+  <!-- Formulario de registro de viaje -->
+  <h2>¿Vas a manejar?</h2>
+  <h4>Registra tus datos:</h4>
+
+  <div #map id="map"></div>
+  <div class="flotante">
+    <div class="contenedor-ion-input">
+      <input
+        type="text"
+        [(ngModel)]="toAdd.destino"
+        (input)="updateSearchResults()"
+        placeholder="Destino"
+        class="input-destino"
+      />
+      <ion-list
+        *ngIf="autocompleteItems"
+        [hidden]="autocompleteItems.length == 0"
+        ><ion-item
+          *ngFor="let item of autocompleteItems"
+          tappable
+          (click)="selectSearchResult(item)"
+          >{{ item.description }}</ion-item
+        ></ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input 
+            class="ion-input-conductor"
+            type="text"
+            label="Fecha"
+            labelPlacement="floating"
+            [(ngModel)]="toAdd.fecha"
+            placeholder="ej: 31/10/2023">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input
+              class="ion-input-conductor"
+              type="number"
+              label="Asientos disponibles"
+              labelPlacement="floating"
+              [(ngModel)]="toAdd.capacidad"
+            ></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input
+              class="ion-input-conductor"
+              type="tel"
+              label="Teléfono"
+              labelPlacement="floating"
+              [(ngModel)]="toAdd.telefono"
+              placeholder="ej: +569 32136580"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input
+              class="ion-input-conductor"
+              type="number"
+              label="Tarifa"
+              labelPlacement="floating"
+              [(ngModel)]="toAdd.precio"
+            ></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input
+              class="ion-input-conductor"
+              type="text"
+              label="Hora de salida"
+              labelPlacement="floating"
+              [(ngModel)]="toAdd.hora"
+              placeholder="ej: 21:30"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="botones">
+        <button [routerLink]="['/buscar-chofer']" (click)="crearViaje()">
+          Agendar
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

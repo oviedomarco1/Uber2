@@ -1,27 +1,132 @@
-#container {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300;500&display=swap');
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content{ 
+  --ion-background-color: linear-gradient( #64DFDF, #48BFE3, #5390D9, #5E60CE); 
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.form-group {
+  margin-bottom: 20px;
 }
 
-#container a {
+label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding-bottom: 3px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px #ccc;
+  border-radius: 8px;
+  background-color: #4d6ab87e;
+  box-shadow: inset 0px 10px 7px -10px #46479a9e;
+  font-family: 'Poppins', sans-serif;
+}
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="mail"]::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+input[type="mail"]{
+  width: 100%;
+  padding: 8px;
+  border: 1px #cccccc;
+  color: #ffffff;
+  border-radius: 8px;
+  background-color: #4d6ab87e;
+  box-shadow: inset 0px 10px 7px -10px #252650e2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+button {
+  background: linear-gradient(100deg, rgba(162,219,149,1) 20%, rgba(35,193,160,1) 80%);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: inset 0px 10px 7px -10px #46479A;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(100deg, rgb(135, 182, 124) 20%, rgb(30, 167, 138) 80%);
+  // background-color: #31446c;
+  // box-shadow: inset 0px 10px 7px -10px #292c73;
+  color: #ffffff;
+}
+h2{
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  padding: 2.5rem 0 2rem;
+  text-shadow: 1px 2px 5px #6062b7a4;
+  color: #ffffff;
+}
+.contrasena-olvidada{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.contrasena-olvidada > a{
   text-decoration: none;
+  color: #ffffffee;
+  font-size: 15px;
+  text-shadow: 1px 2px 5px #282bce63;
+  cursor: pointer;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem 0 25vh;
+}
+//Marca registrada
+.marca-registrada {
+  display: flex;
+  justify-content: center;
+}
+.marca-registrada > h6{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+//Modal olvidaste contraseña
+.block {
+  width: 100%;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+}
+h4{
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  text-shadow: 1px 2px 5px #6062b7a4;
+  color: #ffffff;
+}
+h5{
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+}
+ion-modal {
+  --height: auto;
+  --ion-background-color: #538cd1;
+  background-color: #7574743f;
 }
