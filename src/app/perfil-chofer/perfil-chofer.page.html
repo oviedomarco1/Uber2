@@ -1,7 +1,5 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <!-- Mapa -->
-    <!-- <capacitor-google-map id="map"></capacitor-google-map> -->
     <ion-content class="ion-padding">
       <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="false">
         <ion-fab-button>
@@ -15,7 +13,10 @@
             <ion-icon name="car" [routerLink]="['/registrar-viaje']"></ion-icon>
           </ion-fab-button>
           <ion-fab-button>
-            <ion-icon name="person-circle" [routerLink]="['/perfil-chofer']"></ion-icon>
+            <ion-icon
+              name="person-circle"
+              [routerLink]="['/perfil-chofer']"
+            ></ion-icon>
           </ion-fab-button>
           <ion-fab-button>
             <ion-icon name="log-out" [routerLink]="['/home']"></ion-icon>
@@ -23,7 +24,9 @@
         </ion-fab-list>
       </ion-fab>
     </ion-content>
+    <h2>Mis Viajes Creados</h2>
     <ion-row *ngFor="let viaje of viajes">
+      <!-- Viaje 1 -->
       <ion-col>
         <ion-card class="card-animated">
           <img alt="" src="assets/maps-2.png" />
@@ -33,20 +36,22 @@
               >{{ viaje.pasajeros }}/{{ viaje.capacidad }}</ion-card-subtitle
             >
           </ion-card-header>
-          <ion-card-content>Tarifa: ${{ viaje.precio }}</ion-card-content>
-          <ion-card-content>Fecha: {{ viaje.fecha }}</ion-card-content>
-          <ion-card-content>Hora: {{ viaje.hora }}</ion-card-content>
-          <ion-card-content>Destino: {{ viaje.destino }}</ion-card-content>
-          <ion-buttons>
-            <ion-button fill="clear" (click)="aceptarViaje(viaje.id)"
-              >Reservar
-              <ion-icon name="car-outline" class="pedir-viaje-logo"></ion-icon
-            ></ion-button>
-            <ion-button fill="clear"
-              >Contactar
-              <ion-icon name="logo-whatsapp" class="whatsapp-logo"></ion-icon
-            ></ion-button>
-          </ion-buttons>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-card-content>Tarifa: {{ viaje.precio }}</ion-card-content>
+                <ion-card-content>Destino: {{ viaje.destino }}</ion-card-content>
+              </ion-col>
+              <ion-col>
+                <ion-card-content>Fecha: {{ viaje.fecha }}</ion-card-content>
+                <ion-card-content>Hora: {{ viaje.hora }}</ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+          
+          
+          
         </ion-card>
       </ion-col>
     </ion-row>

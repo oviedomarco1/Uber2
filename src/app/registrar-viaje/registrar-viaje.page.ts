@@ -14,7 +14,8 @@ export interface Viaje{
   capacidad: number,
   destino: string,
   telefono: string,
-  precio: number
+  precio: number,
+  pasajeros: number
 }
 
 @Component({
@@ -40,12 +41,14 @@ export class RegistrarViajePage implements OnInit {
     precio: 0,
     capacidad: 0,
     telefono: '',
-    destino: 'Lider, Melipilla'
+    destino: 'Lider, Melipilla',
+    pasajeros: 0
   }
 
   async crearViaje(){
     let viajes = await this.storage.get("viajes") || []
     this.toAdd.id = viajes.length + 1
+    this.toAdd.pasajeros = 0
     viajes.push(this.toAdd)
     this.storage.set("viajes", viajes)
     console.log(viajes)

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'registrar-viaje',//por defecto tiene que ir a home
+    redirectTo: 'home',//por defecto tiene que ir a home
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'registrar-viaje',
     loadChildren: () => import('./registrar-viaje/registrar-viaje.module').then( m => m.RegistrarViajePageModule)
+  },
+  {
+    path: 'perfil-chofer',
+    loadChildren: () => import('./perfil-chofer/perfil-chofer.module').then( m => m.PerfilChoferPageModule)
   },
 ];
 

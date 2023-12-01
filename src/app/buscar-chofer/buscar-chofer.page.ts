@@ -12,6 +12,7 @@ export interface Viaje{
   destino: string,
   telefono: string,
   precio: number
+  pasajeros: number
 }
 
 @Component({
@@ -53,6 +54,29 @@ export class BuscarChoferPage implements OnInit {
     this.viajes = await this.storage.get("viajes") || []
   }
 
+  async aceptarViaje(id: number){
+    for(let viaje of this.viajes){
+      if(viaje.id == id){
+        if(viaje.pasajeros >= viaje.capacidad){
+          this.showToast("No quedan asientos disponibles")
+          return
+        }
+        viaje.pasajeros = viaje.pasajeros + 1
+        this.showToast("¡Te has unido al viaje!")
+        await this.storage.set("viajes",this.viajes)
+        return
+      }
+      this.aaa.create()
+    }
+  }
 
+  async showToast(texto:string) {
+    const toast = await this.aaa.create({
+      message: texto,
+      duration: 1000,
+      position: 'top',
+    });
 
+    await toast.present();
+  }
 }
