@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'registrar-viaje',//por defecto tiene que ir a home
+    redirectTo: 'home',//por defecto tiene que ir a home
     pathMatch: 'full'
   },
   {
