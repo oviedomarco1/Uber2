@@ -21,28 +21,30 @@ export class HomePage {
   usuario = ""
   clave = ""
 
+  mostrarError: boolean = false;
+
   constructor(private sss:AnimationController, private aaa:ToastController, private storage: Storage, private router: Router ) {}
 
   async ngOnInit() {
     await this.storage.create();
   }
 
-  //En validar() debería mostrar el Toast que hicimos en clases, pero no funca. 
-  //Por ahora sólo anima los inputs de usuario y clave.
   validar(){
     if (this.usuario.length >= 5){
       if (this.clave.length >= 5 && /\d/.test(this.clave)){
         if(this.usuario == "Marco" && this.clave == "oviedo12" || this.usuario == "Diego" && this.clave == "chavez12"){
-          this.mostrarToast("¡Bienvenido "+ this.usuario + "! 🐼");
           this.router.navigate(['/buscar-chofer']);
+          this.mostrarToast("¡Bienvenido "+ this.usuario + "! 🐼");
         }else{
-          this.mostrarToast("Datos incorrectos");
+          this.mostrarError = true;
         }
       }else{
         this.animarInput("#clave");
+        this.mostrarError = true;
       }
     }else{
       this.animarInput("#usuario");
+      this.mostrarError = true;
     }
   }
   animarInput(input:string){
@@ -58,7 +60,7 @@ export class HomePage {
     async mostrarToast(texto:string) {
       const toast = await this.aaa.create({
         message: texto,
-        duration: 3000,
+        duration: 1200,
         position: 'top',
         color: "dark"
       });
@@ -67,9 +69,9 @@ export class HomePage {
     }
   animarModal(){
     let modal = document.querySelector('.modal-entrada') as HTMLIonModalElement
-    this.sss.create().addElement(modal).duration(300)
+    this.sss.create().addElement(modal).duration(200)
     .keyframes([
-      { offset: 0, transform: 'translateY(100%) translateX(100%) rotate(30deg)', opacity: 0 },
+      { offset: 0, transform: 'translateY(20%) translateX(20%) rotate(0deg)', opacity: 0 },
       { offset: 1, transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
     ]).play()
 

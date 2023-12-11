@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { IonicStorageModule } from '@ionic/storage-angular';
 
+import { MapaService } from './mapa.service';
+
 
 @NgModule({
   declarations: [AppComponent],

@@ -26,7 +26,6 @@
   <!-- Formulario de registro de viaje -->
   <h2>¿Vas a manejar?</h2>
   <h4>Registra tus datos:</h4>
-
   <div #map id="map"></div>
   <div class="flotante">
     <div class="contenedor-ion-input">
@@ -48,6 +47,16 @@
         ></ion-list>
       <ion-grid>
         <ion-row>
+          <ion-col>
+            <ion-input 
+            class="ion-input-conductor"
+            type="text"
+            label="Nombre"
+            labelPlacement="floating"
+            [(ngModel)]="toAdd.userId"
+            placeholder="Escriba su nombre">
+            </ion-input>
+          </ion-col>
           <ion-col>
             <ion-input 
             class="ion-input-conductor"
@@ -103,7 +112,7 @@
         </ion-row>
       </ion-grid>
       <div class="botones">
-        <button [routerLink]="['/buscar-chofer']" (click)="crearViaje()">
+        <button [routerLink]="['/buscar-chofer']" (click)="crearViaje(toAdd.userId)">
           Agendar
         </button>
       </div>

@@ -14,8 +14,8 @@ h2{
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    padding: 2.5rem 0 2rem;
+    font-size: 2.3rem;
+    padding: 8vh 0 2rem;
     text-shadow: 1px 2px 5px #6062b7a4;
     padding-bottom: 0px;
 }
@@ -60,16 +60,15 @@ h4{
     padding-bottom: 0px;
 }
 button {
-    background: linear-gradient(90deg, rgba(162,219,149,1) 0%, rgba(35,193,160,1) 100%);
-    color: white;
+    background: linear-gradient(100deg, rgba(162,219,149,1) 5%, rgba(35,193,160,1) 90%);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    box-shadow: inset 0px 10px 7px -10px #46479A;
+    border-radius: 30px;
+    padding: 14px 20px;
+    box-shadow: 0px 10px 7px -10px #46479A;
     cursor: pointer;
-    width: 100%;
-}
-  
+    width: 80%;
+  }
 button:hover {
     background-color: #31446c;
 }
@@ -77,6 +76,6 @@ button:hover {
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    padding: 1rem;
+    padding: 1vh;
     padding-left: 5vw;
 }

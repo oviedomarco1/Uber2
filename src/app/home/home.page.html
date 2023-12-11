@@ -9,22 +9,24 @@
       <div class="form-group">
         <input type="password" id="clave" placeholder="Contraseña" name="clave" [(ngModel)]="clave" (focusout)="validar">
       </div>
+      <div class="mensaje-error-login" *ngIf="mostrarError">
+        <p>Credenciales incorrectas. Intentalo nuevamente.</p>
+      </div>
       <div class="contrasena-olvidada">
-          <a (click)="animarModal()" id="open-modal" expand="block">Olvidaste tu contraseña?</a>
+          <a (click)="animarModal()" id="open-modal" expand="block">¿Olvidaste tu contraseña?</a>
       </div>
       <div class="botones">
         <button type="submit" (click)="validar()">Iniciar sesión</button>
-        <!-- <button type="submit" [routerLink]="['/buscar-chofer']">Interfaz</button> -->
       </div>
       <div class="marca-registrada">
-        <h6>TeLlevoApp® 2023</h6>
+        <h6 class="texto-marca-registrada">TeLlevoApp® 2023</h6>
       </div>
       <!-- Modal -->
       <ion-modal class="modal-entrada" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]" >
         <ng-template>
           <div class="block">
             <h4>Reestablecer contraseña</h4>
-            <h5>Recibirás más instrucciones en tu correo electrónico institucional de DuocUC</h5>
+            <h5>Recibirás más instrucciones en tu correo electrónico institucional de DuocUC.</h5>
             <input type="mail" placeholder="mar.oviedo@duocuc.cl">
             <div class="botones">
               <button type="submit">Recuperar</button>

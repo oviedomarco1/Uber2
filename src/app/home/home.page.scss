@@ -8,7 +8,7 @@ ion-content{
 .login-container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 3vh 10vh;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -24,7 +24,7 @@ label {
   padding-bottom: 3px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"]{
   width: 100%;
   padding: 8px;
   border: 1px #ccc;
@@ -35,10 +35,12 @@ input[type="text"], input[type="password"] {
 }
 input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="mail"]::placeholder {
   font-family: 'Poppins', sans-serif;
-  color: #ffffff;
+  color: #ffffffc0;
 }
 input[type="mail"]{
-  width: 100%;
+  max-width: 100%;
+  width: 90%;
+  margin-left: 5vw;
   padding: 8px;
   border: 1px #cccccc;
   color: #ffffff;
@@ -49,15 +51,15 @@ input[type="mail"]{
   font-size: 12px;
 }
 button {
-  background: linear-gradient(100deg, rgba(162,219,149,1) 20%, rgba(35,193,160,1) 80%);
+  background: linear-gradient(100deg, rgba(162,219,149,1) 5%, rgba(35,193,160,1) 90%);
   color: #ffffff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  box-shadow: inset 0px 10px 7px -10px #46479A;
+  border-radius: 30px;
+  padding: 14px 20px;
+  box-shadow: 0px 10px 7px -10px #46479A;
   cursor: pointer;
+  width: 80%;
 }
-
 button:hover {
   background: linear-gradient(100deg, rgb(135, 182, 124) 20%, rgb(30, 167, 138) 80%);
   // background-color: #31446c;
@@ -73,6 +75,11 @@ h2{
   text-shadow: 1px 2px 5px #6062b7a4;
   color: #ffffff;
 }
+.texto-marca-registrada{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
 .contrasena-olvidada{
   display: flex;
   justify-content: center;
@@ -82,6 +89,7 @@ h2{
   text-decoration: none;
   color: #ffffffee;
   font-size: 15px;
+  font-weight: 700;
   text-shadow: 1px 2px 5px #282bce63;
   cursor: pointer;
 }
@@ -89,7 +97,7 @@ h2{
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  padding: 1rem 0 25vh;
+  padding: 1vh 0 25vh;
 }
 //Marca registrada
 .marca-registrada {
@@ -111,7 +119,7 @@ h4{
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding-bottom: 1rem;
   text-shadow: 1px 2px 5px #6062b7a4;
   color: #ffffff;
@@ -120,7 +128,7 @@ h5{
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   padding-left: 10px;
   padding-right: 10px;
   color: #ffffff;

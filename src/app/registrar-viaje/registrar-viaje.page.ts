@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, NgZone} from '@angular/core';
 import type { Animation } from '@ionic/angular';
-import {AnimationController, IonCard, IonCardContent, Platform} from '@ionic/angular';
+import {AnimationController, IonCard, IonCardContent, Platform, NavController } from '@ionic/angular';
 declare var google: any;
 import { Geolocation } from '@capacitor/geolocation';
 import { GoogleMap } from '@capacitor/google-maps';
@@ -9,6 +9,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage-angular';
 //interfaz para guardar la info del registro del viaje
 export interface Viaje{
   id: number,
+  userId: string,
   fecha: string,
   hora: string,
   capacidad: number,
@@ -36,6 +37,7 @@ export class RegistrarViajePage implements OnInit {
 
   toAdd: Viaje = {
     id: 0,
+    userId: '',
     fecha: '',
     hora: '',
     precio: 0,
@@ -45,22 +47,23 @@ export class RegistrarViajePage implements OnInit {
     pasajeros: 0
   }
 
-  async crearViaje(){
+  async crearViaje(userId: string){
     let viajes = await this.storage.get("viajes") || []
     this.toAdd.id = viajes.length + 1
     this.toAdd.pasajeros = 0
+    this.toAdd.userId = userId
     viajes.push(this.toAdd)
     this.storage.set("viajes", viajes)
     console.log(viajes)
   }
   
-  constructor(private sss: AnimationController, private zone: NgZone, private platform: Platform, private storage: Storage ) {}
+  constructor(private sss: AnimationController, private zone: NgZone, private platform: Platform, private storage: Storage, private navCtrl: NavController) {}
 
   ionViewDidEnter(){
     this.platform.ready().then(() => {
       this.initMap()
     })
-  }
+  }  
   initMap() {
     this.directionsService = new google.maps.DirectionsService;
     this.directionsDisplay = new google.maps.DirectionsRenderer;

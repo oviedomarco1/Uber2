@@ -23,12 +23,20 @@
         </ion-fab-list>
       </ion-fab>
     </ion-content>
-    <ion-row *ngFor="let viaje of viajes">
+    <h2>Buscar Viaje</h2>
+    <!-- <div #map id="map"></div> -->
+    <div class="no-viajes-creados" *ngIf="viajes.length === 0">
+      <p>No se han creado viajes...</p>
+      <img src="\assets\icons8-decepcionado.gif" alt="cara_triste" class="no-viajes-gif">
+      <a [routerLink]="['/registrar-viaje']">¿Quieres manejar y ganar dinero? ¡Pínchame!</a>
+    </div>
+    <ion-row *ngFor="let viaje of viajes;">
       <ion-col>
         <ion-card class="card-animated">
-          <img alt="" src="assets/maps-2.png" />
+          <!-- <img alt="" src="assets/maps-2.png" /> -->
+          <div #map id="map"></div>
           <ion-card-header>
-            <ion-card-title>Alumno 1</ion-card-title>
+            <ion-card-title>{{ viaje.userId }}</ion-card-title>
             <ion-card-subtitle class="disponibilidad"
               >{{ viaje.pasajeros }}/{{ viaje.capacidad }}</ion-card-subtitle
             >
@@ -38,7 +46,7 @@
           <ion-card-content>Hora: {{ viaje.hora }}</ion-card-content>
           <ion-card-content>Destino: {{ viaje.destino }}</ion-card-content>
           <ion-buttons>
-            <ion-button fill="clear" (click)="aceptarViaje(viaje.id)"
+            <ion-button fill="clear" (click)="aceptarViaje(viaje.id,viaje.userId)"
               >Reservar
               <ion-icon name="car-outline" class="pedir-viaje-logo"></ion-icon
             ></ion-button>
